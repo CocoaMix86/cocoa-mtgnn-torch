@@ -175,7 +175,7 @@ elif [[ "$(uname)" == 'Linux' ]]; then
             echo "Some portion of the update is failed"
         fi
         # python-software-properties is required for apt-add-repository
-        sudo apt-get install -y python-software-properties
+        sudo apt-get install -y software-properties-common
         echo "==> Found Ubuntu version ${ubuntu_major_version}.xx"
         if [[ $ubuntu_major_version -lt '12' ]]; then
             echo '==> Ubuntu version not supported.'
@@ -196,10 +196,12 @@ elif [[ "$(uname)" == 'Linux' ]]; then
         else
             echo "Some portion of the update is failed"
         fi
+	sudo add-apt-repository ppa:ubuntuhandbook1/ppa
         sudo apt-get install -y build-essential gcc g++ curl \
             cmake libreadline-dev git-core libqt4-dev libjpeg-dev \
             libpng-dev ncurses-dev imagemagick libzmq3-dev gfortran \
-            unzip gnuplot gnuplot-x11 ipython
+            unzip gnuplot gnuplot-x11 python3-pip
+	pip3 install ipython
 
         gcc_major_version=$(gcc --version | grep ^gcc | awk '{print $4}' | \
                             cut -c 1)
