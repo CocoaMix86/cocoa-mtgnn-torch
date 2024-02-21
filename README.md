@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/torch/distro.svg?branch=master)](https://travis-ci.org/torch/distro)
+## See [https://github.com/CocoaMix86/MTG-NeuralNet-Bot] for the main setup process
 
 #### NOTE: Torch is not actively developed anymore and is in maintenance mode.
 
